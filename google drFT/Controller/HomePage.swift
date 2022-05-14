@@ -516,9 +516,9 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TVC
         let data: String = savedTranlations[indexPath.row].text!
-        let savedText = data.components(separatedBy: "~")
-        let upLbl: String = String(savedText[0])
-        let downLbl : String = String(savedText[1])
+        let savedText = data.split(separator: "~")
+        let upLbl: String = String(savedText[0].replacingOccurrences(of: "Optional", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "\"", with: ""))
+        let downLbl : String = String(savedText[1].replacingOccurrences(of: "Optional", with: "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "\"", with: ""))
         cell.updateCell(upLbl: upLbl, downLbl: downLbl)
         return cell
     }
