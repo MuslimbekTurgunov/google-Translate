@@ -13,7 +13,6 @@
 		0843DF96282ED36C0092FFC6 /* TranslateDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843DF95282ED36C0092FFC6 /* TranslateDM.swift */; };
 		08A62D6C282EDDF5007174B6 /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A62D6B282EDDF5007174B6 /* TVC.swift */; };
 		08CC2E7B282D6D31002E163E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC2E7A282D6D31002E163E /* AppDelegate.swift */; };
-		08CC2E85282D6D31002E163E /* google_drFT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08CC2E83282D6D31002E163E /* google_drFT.xcdatamodeld */; };
 		08CC2E87282D6D32002E163E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08CC2E86282D6D32002E163E /* Assets.xcassets */; };
 		08CC2E8A282D6D32002E163E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CC2E88282D6D32002E163E /* LaunchScreen.storyboard */; };
 		08CC2E92282D7A81002E163E /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CC2E91282D7A81002E163E /* HomePage.swift */; };
@@ -28,7 +27,6 @@
 		08A62D6B282EDDF5007174B6 /* TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVC.swift; sourceTree = "<group>"; };
 		08CC2E77282D6D31002E163E /* google drFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "google drFT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CC2E7A282D6D31002E163E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08CC2E84282D6D31002E163E /* google_drFT.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = google_drFT.xcdatamodel; sourceTree = "<group>"; };
 		08CC2E86282D6D32002E163E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08CC2E89282D6D32002E163E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08CC2E8B282D6D32002E163E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 				08CC2E86282D6D32002E163E /* Assets.xcassets */,
 				08CC2E88282D6D32002E163E /* LaunchScreen.storyboard */,
 				08CC2E8B282D6D32002E163E /* Info.plist */,
-				08CC2E83282D6D31002E163E /* google_drFT.xcdatamodeld */,
 				08CC2E91282D7A81002E163E /* HomePage.swift */,
 				0843DF87282EBA390092FFC6 /* TabbarVC.swift */,
 				0843DF8D282EBB180092FFC6 /* SavedVC.swift */,
@@ -219,7 +216,6 @@
 			files = (
 				0843DF8E282EBB180092FFC6 /* SavedVC.swift in Sources */,
 				08A62D6C282EDDF5007174B6 /* TVC.swift in Sources */,
-				08CC2E85282D6D31002E163E /* google_drFT.xcdatamodeld in Sources */,
 				08CC2E92282D7A81002E163E /* HomePage.swift in Sources */,
 				0843DF88282EBA390092FFC6 /* TabbarVC.swift in Sources */,
 				08CC2E7B282D6D31002E163E /* AppDelegate.swift in Sources */,
@@ -436,19 +432,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		08CC2E83282D6D31002E163E /* google_drFT.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				08CC2E84282D6D31002E163E /* google_drFT.xcdatamodel */,
-			);
-			currentVersion = 08CC2E84282D6D31002E163E /* google_drFT.xcdatamodel */;
-			path = google_drFT.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 08CC2E6F282D6D31002E163E /* Project object */;
 }

@@ -289,7 +289,7 @@ class HomePage: UIViewController {
         
         //tableView
         self.myView.addSubview(tableView)
-        tableView.backgroundColor = .systemGray6
+        tableView.backgroundColor = .secondarySystemBackground
         tableView.isScrollEnabled = true
         tableView.snp.makeConstraints { make in
             make.top.equalTo(stripeViewBottom3.snp.bottom).inset(-3)

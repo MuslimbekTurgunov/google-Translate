@@ -25,14 +25,14 @@ class TVC: UITableViewCell {
     }()
     let lblUpLanguage: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
+        lbl.textColor = .label
         lbl.textAlignment = .left
         lbl.font = .systemFont(ofSize: 16, weight: .semibold)
         return lbl
     }()
     let lblDownLanguage: UILabel = {
         let lbl = UILabel()
-        lbl.textColor = .black
+        lbl.textColor = .label
         lbl.textAlignment = .left
         lbl.font = .systemFont(ofSize: 12, weight: .medium)
         return lbl

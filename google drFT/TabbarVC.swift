@@ -20,7 +20,7 @@ class TabbarVC: UITabBarController {
             let vc1 = HomePage()
             let navVc = UINavigationController(rootViewController: vc1)
 
-            let barBackgroundColor = #colorLiteral(red: 0.291172266, green: 0.5433652401, blue: 0.9586004615, alpha: 1)
+            let barBackgroundColor: UIColor = UIColor(named: "googleColor")!
 
             let appearance = UINavigationBarAppearance()
             appearance.configureWithDefaultBackground()
@@ -36,10 +36,10 @@ class TabbarVC: UITabBarController {
             
             
             let vc2 = SavedVC()
-            let item2 = UITabBarItem(title: "Saved", image: UIImage(systemName: "square.grid.2x2"), selectedImage: nil)
+            let item2 = UITabBarItem(title: "Saved", image: UIImage(systemName: "star.fill"), selectedImage: nil)
             
             let vc3 = SettingsVC()
-            let item3 = UITabBarItem(title: "settings", image: UIImage(systemName: "square.grid.2x2"), selectedImage: nil)
+            let item3 = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape.fill"), selectedImage: nil)
             navVc.tabBarItem = item1
             vc2.tabBarItem = item2
             vc3.tabBarItem = item3
