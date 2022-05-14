@@ -7,19 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083FDD3B282FA3B5004CF458 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083FDD3A282FA3B5004CF458 /* ButtonExtension.swift */; };
+		083FDD3E282FC754004CF458 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083FDD3D282FC754004CF458 /* Network.swift */; };
 		0843DF88282EBA390092FFC6 /* TabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843DF87282EBA390092FFC6 /* TabbarVC.swift */; };
 		0843DF8E282EBB180092FFC6 /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843DF8D282EBB180092FFC6 /* SavedVC.swift */; };
 		0843DF90282EBB2B0092FFC6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843DF8F282EBB2B0092FFC6 /* SettingsVC.swift */; };
 		0843DF96282ED36C0092FFC6 /* TranslateDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0843DF95282ED36C0092FFC6 /* TranslateDM.swift */; };
 		085D282C282F7348000EAFB0 /* RealmDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085D282B282F7348000EAFB0 /* RealmDM.swift */; };
-		085D2835282F7C83000EAFB0 /* 63224-random-calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D282D282F7C82000EAFB0 /* 63224-random-calendar.json */; };
-		085D2836282F7C83000EAFB0 /* 32532-day-night.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D282E282F7C82000EAFB0 /* 32532-day-night.json */; };
-		085D2837282F7C83000EAFB0 /* 97484-clock-time.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D282F282F7C82000EAFB0 /* 97484-clock-time.json */; };
-		085D2838282F7C83000EAFB0 /* 50285-day-night-cycle-big.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2830282F7C82000EAFB0 /* 50285-day-night-cycle-big.json */; };
-		085D2839282F7C83000EAFB0 /* 8818-now-loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2831282F7C82000EAFB0 /* 8818-now-loading.json */; };
-		085D283A282F7C83000EAFB0 /* 101700-calendar-animation-blue.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2832282F7C82000EAFB0 /* 101700-calendar-animation-blue.json */; };
-		085D283B282F7C83000EAFB0 /* 101787-bell-ringing-2.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2833282F7C83000EAFB0 /* 101787-bell-ringing-2.json */; };
-		085D283C282F7C83000EAFB0 /* 95602-calendar-green.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2834282F7C83000EAFB0 /* 95602-calendar-green.json */; };
 		085D283E282F7ED4000EAFB0 /* 103989-done.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D283D282F7ED4000EAFB0 /* 103989-done.json */; };
 		085D2841282F81BA000EAFB0 /* 87669-delete-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D283F282F81BA000EAFB0 /* 87669-delete-animation.json */; };
 		085D2842282F81BA000EAFB0 /* delete.json in Resources */ = {isa = PBXBuildFile; fileRef = 085D2840282F81BA000EAFB0 /* delete.json */; };
@@ -34,19 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083FDD3A282FA3B5004CF458 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		083FDD3D282FC754004CF458 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		0843DF87282EBA390092FFC6 /* TabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarVC.swift; sourceTree = "<group>"; };
 		0843DF8D282EBB180092FFC6 /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
 		0843DF8F282EBB2B0092FFC6 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		0843DF95282ED36C0092FFC6 /* TranslateDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateDM.swift; sourceTree = "<group>"; };
 		085D282B282F7348000EAFB0 /* RealmDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDM.swift; sourceTree = "<group>"; };
-		085D282D282F7C82000EAFB0 /* 63224-random-calendar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "63224-random-calendar.json"; sourceTree = "<group>"; };
-		085D282E282F7C82000EAFB0 /* 32532-day-night.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "32532-day-night.json"; sourceTree = "<group>"; };
-		085D282F282F7C82000EAFB0 /* 97484-clock-time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "97484-clock-time.json"; sourceTree = "<group>"; };
-		085D2830282F7C82000EAFB0 /* 50285-day-night-cycle-big.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "50285-day-night-cycle-big.json"; sourceTree = "<group>"; };
-		085D2831282F7C82000EAFB0 /* 8818-now-loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8818-now-loading.json"; sourceTree = "<group>"; };
-		085D2832282F7C82000EAFB0 /* 101700-calendar-animation-blue.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "101700-calendar-animation-blue.json"; sourceTree = "<group>"; };
-		085D2833282F7C83000EAFB0 /* 101787-bell-ringing-2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "101787-bell-ringing-2.json"; sourceTree = "<group>"; };
-		085D2834282F7C83000EAFB0 /* 95602-calendar-green.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "95602-calendar-green.json"; sourceTree = "<group>"; };
 		085D283D282F7ED4000EAFB0 /* 103989-done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "103989-done.json"; sourceTree = "<group>"; };
 		085D283F282F81BA000EAFB0 /* 87669-delete-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "87669-delete-animation.json"; sourceTree = "<group>"; };
 		085D2840282F81BA000EAFB0 /* delete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = delete.json; sourceTree = "<group>"; };
@@ -76,6 +64,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083FDD39282FA29C004CF458 /* lotties */ = {
+			isa = PBXGroup;
+			children = (
+				085D2844282F83CD000EAFB0 /* 98599-settings.json */,
+				085D2843282F83CD000EAFB0 /* cooming soon.json */,
+				085D283D282F7ED4000EAFB0 /* 103989-done.json */,
+				085D283F282F81BA000EAFB0 /* 87669-delete-animation.json */,
+				085D2840282F81BA000EAFB0 /* delete.json */,
+			);
+			path = lotties;
+			sourceTree = "<group>";
+		};
+		083FDD3C282FA5AB004CF458 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				083FDD3A282FA3B5004CF458 /* ButtonExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		083FDD43282FCB84004CF458 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				083FDD3D282FC754004CF458 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		083FDD44282FCBA5004CF458 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				08CC2E7A282D6D31002E163E /* AppDelegate.swift */,
+				0843DF87282EBA390092FFC6 /* TabbarVC.swift */,
+				08CC2E91282D7A81002E163E /* HomePage.swift */,
+				0843DF8D282EBB180092FFC6 /* SavedVC.swift */,
+				0843DF8F282EBB2B0092FFC6 /* SettingsVC.swift */,
+				083FDD45282FCBB8004CF458 /* TVC */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		083FDD45282FCBB8004CF458 /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				08A62D6B282EDDF5007174B6 /* TVC.swift */,
+			);
+			path = TVC;
+			sourceTree = "<group>";
+		};
+		083FDD46282FCBDD004CF458 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0843DF95282ED36C0092FFC6 /* TranslateDM.swift */,
+				085D282B282F7348000EAFB0 /* RealmDM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		083FDD47282FCC86004CF458 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				083FDD3C282FA5AB004CF458 /* Extension */,
+				083FDD43282FCB84004CF458 /* Network */,
+				083FDD39282FA29C004CF458 /* lotties */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		085CDE4A54CF2AA009EBAAA9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,30 +162,12 @@
 		08CC2E79282D6D31002E163E /* google drFT */ = {
 			isa = PBXGroup;
 			children = (
-				08CC2E7A282D6D31002E163E /* AppDelegate.swift */,
+				083FDD44282FCBA5004CF458 /* Controller */,
+				083FDD46282FCBDD004CF458 /* Model */,
+				083FDD47282FCC86004CF458 /* Helpers */,
 				08CC2E86282D6D32002E163E /* Assets.xcassets */,
 				08CC2E88282D6D32002E163E /* LaunchScreen.storyboard */,
 				08CC2E8B282D6D32002E163E /* Info.plist */,
-				08CC2E91282D7A81002E163E /* HomePage.swift */,
-				0843DF87282EBA390092FFC6 /* TabbarVC.swift */,
-				0843DF8D282EBB180092FFC6 /* SavedVC.swift */,
-				0843DF8F282EBB2B0092FFC6 /* SettingsVC.swift */,
-				0843DF95282ED36C0092FFC6 /* TranslateDM.swift */,
-				08A62D6B282EDDF5007174B6 /* TVC.swift */,
-				085D282B282F7348000EAFB0 /* RealmDM.swift */,
-				085D2844282F83CD000EAFB0 /* 98599-settings.json */,
-				085D2843282F83CD000EAFB0 /* cooming soon.json */,
-				085D2831282F7C82000EAFB0 /* 8818-now-loading.json */,
-				085D282E282F7C82000EAFB0 /* 32532-day-night.json */,
-				085D2830282F7C82000EAFB0 /* 50285-day-night-cycle-big.json */,
-				085D282D282F7C82000EAFB0 /* 63224-random-calendar.json */,
-				085D2834282F7C83000EAFB0 /* 95602-calendar-green.json */,
-				085D282F282F7C82000EAFB0 /* 97484-clock-time.json */,
-				085D2832282F7C82000EAFB0 /* 101700-calendar-animation-blue.json */,
-				085D2833282F7C83000EAFB0 /* 101787-bell-ringing-2.json */,
-				085D283D282F7ED4000EAFB0 /* 103989-done.json */,
-				085D283F282F81BA000EAFB0 /* 87669-delete-animation.json */,
-				085D2840282F81BA000EAFB0 /* delete.json */,
 			);
 			path = "google drFT";
 			sourceTree = "<group>";
@@ -203,19 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				085D2845282F83CD000EAFB0 /* cooming soon.json in Resources */,
-				085D2839282F7C83000EAFB0 /* 8818-now-loading.json in Resources */,
 				08CC2E8A282D6D32002E163E /* LaunchScreen.storyboard in Resources */,
-				085D283B282F7C83000EAFB0 /* 101787-bell-ringing-2.json in Resources */,
-				085D2836282F7C83000EAFB0 /* 32532-day-night.json in Resources */,
 				085D2841282F81BA000EAFB0 /* 87669-delete-animation.json in Resources */,
-				085D2837282F7C83000EAFB0 /* 97484-clock-time.json in Resources */,
 				08CC2E87282D6D32002E163E /* Assets.xcassets in Resources */,
 				085D2842282F81BA000EAFB0 /* delete.json in Resources */,
-				085D283A282F7C83000EAFB0 /* 101700-calendar-animation-blue.json in Resources */,
-				085D2838282F7C83000EAFB0 /* 50285-day-night-cycle-big.json in Resources */,
 				085D283E282F7ED4000EAFB0 /* 103989-done.json in Resources */,
-				085D283C282F7C83000EAFB0 /* 95602-calendar-green.json in Resources */,
-				085D2835282F7C83000EAFB0 /* 63224-random-calendar.json in Resources */,
 				085D2846282F83CD000EAFB0 /* 98599-settings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083FDD3E282FC754004CF458 /* Network.swift in Sources */,
 				0843DF8E282EBB180092FFC6 /* SavedVC.swift in Sources */,
 				08A62D6C282EDDF5007174B6 /* TVC.swift in Sources */,
 				085D282C282F7348000EAFB0 /* RealmDM.swift in Sources */,
@@ -276,6 +307,7 @@
 				0843DF88282EBA390092FFC6 /* TabbarVC.swift in Sources */,
 				08CC2E7B282D6D31002E163E /* AppDelegate.swift in Sources */,
 				0843DF90282EBB2B0092FFC6 /* SettingsVC.swift in Sources */,
+				083FDD3B282FA3B5004CF458 /* ButtonExtension.swift in Sources */,
 				0843DF96282ED36C0092FFC6 /* TranslateDM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
