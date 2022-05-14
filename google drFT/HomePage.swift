@@ -11,9 +11,12 @@ import CloudKit
 
 class HomePage: UIViewController {
     var istextViewTopFilled: Bool = false
+    var isUzbekSelected: Bool = true
     var flag = 0
     let headerLabel = UILabel()
     let profileBtn = UIButton()
+    var myTranslatedText = ""
+    var savedTexts: [String] = []
     let myView = UIView()
     let stripeViewTop = UIView()
     let stripeViewBottom = UIView()
@@ -24,7 +27,7 @@ class HomePage: UIViewController {
     let rightLangBtn = UIButton()
     let switchBtn = UIButton()
     let textViewTop = UITextView()
-    let textViewBottom = UITextView()
+    var textViewBottom = UITextView()
     let languageTopBtn = UIButton()
     let languageBottomBtn = UIButton()
     let cameraBtn = UIButton()
@@ -39,6 +42,7 @@ class HomePage: UIViewController {
       
         navigationItem.title = "Google Переводчик"
         textViewDelegateSetup()
+        setupTableView()
         setupViews()
         profileBtnSetup()
     }
@@ -51,6 +55,7 @@ class HomePage: UIViewController {
         clearBtn.isHidden = true
         languageTopBtn.isHidden = true
         textViewTop.text = ""
+        textViewBottom.text = ""
         if textViewTop.endEditing(true) && textViewTop.text == "" {
             textViewTop.text = "Write a text"
             textViewTop.textColor = .systemGray4
@@ -61,6 +66,36 @@ class HomePage: UIViewController {
         }
     }
     
+    @objc func switchBtnPressed(){
+        isUzbekSelected = !isUzbekSelected
+        setupSwitchChanges()
+        
+    }
+    
+    @objc func saveBtnPressed(){
+        savedTexts.append("\(textViewTop.text)~\(textViewBottom.text)")
+        tableView.reloadData()
+        }
+    
+    
+    func setupSwitchChanges(){
+        if isUzbekSelected {
+            leftLangBtn.setTitle("uzbek", for: .normal)
+            rightLangBtn.setTitle("english", for: .normal)
+            languageTopBtn.setTitle("uzbek", for: .normal)
+            languageBottomBtn.setTitle("english", for: .normal)
+            
+            
+        } else {
+            leftLangBtn.setTitle("english", for: .normal)
+            rightLangBtn.setTitle("uzbek", for: .normal)
+            languageTopBtn.setTitle("english", for: .normal)
+            languageBottomBtn.setTitle("uzbek", for: .normal)
+            
+        }
+    }
+    
+
     func setupViews(){
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -79,6 +114,7 @@ class HomePage: UIViewController {
         rightLangBtn.isUserInteractionEnabled = false
         switchBtn.setImage(UIImage(systemName: "arrow.left.arrow.right")?.applyingSymbolConfiguration(.init(weight: UIImage.SymbolWeight.light)), for: .normal)
         switchBtn.tintColor = .systemGray
+        switchBtn.addTarget(self, action: #selector(switchBtnPressed), for: .touchUpInside)
         
         
         let stackView = UIStackView()
@@ -86,7 +122,7 @@ class HomePage: UIViewController {
         stackView.addArrangedSubview(switchBtn)
         stackView.addArrangedSubview(rightLangBtn)
         stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillEqually
         stackView.alignment = .fill
         self.myView.addSubview(stackView)
         stackView.snp.makeConstraints { make in
@@ -215,7 +251,7 @@ class HomePage: UIViewController {
         //save buttoon
         self.myView.addSubview(saveBtn)
         saveBtn.setImage(UIImage(systemName: "star")?.applyingSymbolConfiguration(.init(weight: .semibold))?.applyingSymbolConfiguration(.init(pointSize: 15)), for: .normal)
-        saveBtn//.addTarget(self, action: #selector(clearBtnPressed), for: .touchUpInside)
+        saveBtn.addTarget(self, action: #selector(saveBtnPressed), for: .touchUpInside)
         saveBtn.isHidden = true
         saveBtn.tintColor = #colorLiteral(red: 0.2597772479, green: 0.5198659897, blue: 0.9595910907, alpha: 1)
         saveBtn.snp.makeConstraints { make in
@@ -253,13 +289,12 @@ class HomePage: UIViewController {
         
         //tableView
         self.myView.addSubview(tableView)
-        tableView.backgroundColor = .green
+        tableView.backgroundColor = .systemGray6
         tableView.isScrollEnabled = true
-        tableView.separatorStyle = .singleLine
         tableView.snp.makeConstraints { make in
             make.top.equalTo(stripeViewBottom3.snp.bottom).inset(-3)
-            make.right.equalTo(myView.snp.right).inset(8)
-            make.left.equalTo(myView.snp.left).inset(8)
+            make.right.equalTo(myView.snp.right).inset(0)
+            make.left.equalTo(myView.snp.left).inset(0)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
         
@@ -292,24 +327,32 @@ extension HomePage: UITextViewDelegate {
     }
     func textViewDidChange(_ textView: UITextView) {
         // write a translation code here
-        if textViewTop.text.isEmpty {
-            clearBtn.isHidden = true
-            languageTopBtn.isHidden = true
-            saveBtn.isHidden = true
-            languageBottomBtn.isHidden = true
-            //textViewTop.text = "Write a text"
-            //textViewTop.textColor = .systemGray4
-            flag = 0
-        }
+//        if textViewTop.text.isEmpty {
+//            clearBtn.isHidden = true
+//            languageTopBtn.isHidden = true
+//            saveBtn.isHidden = true
+//            languageBottomBtn.isHidden = true
+//            //textViewTop.text = "Write a text"
+//            //textViewTop.textColor = .systemGray4
+//            flag = 0
+//        }
         textViewTop.textColor = .label
         clearBtn.isHidden = false
         languageTopBtn.isHidden = false
         saveBtn.isHidden = false
         languageBottomBtn.isHidden = false
        
-        
-        textViewBottom.text = textViewTop.text
+//        if isUzbekSelected {
+//            UrlSessionSetup(from: .uz, to: .en, text: textViewTop.text)
+//        } else {
+//            UrlSessionSetup(from: .en, to: .uz, text: textViewTop.text)
+//        }
+        textViewBottom.text = textViewTop.text + "1!!"
         textViewBottom.contentOffset.y = textViewTop.contentOffset.y
+        
+       
+        
+        
     }
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
@@ -366,3 +409,95 @@ extension UIButton {
 }
 
 
+//extension HomePage {
+//    enum Language {
+//        case uz
+//        case en
+//    }
+//    func UrlSessionSetup(from: Language, to: Language, text: String){
+//        let headers = [
+//            "content-type": "application/x-www-form-urlencoded",
+//            "Accept-Encoding": "application/gzip",
+//            "X-RapidAPI-Host": "google-translate1.p.rapidapi.com",
+//            "X-RapidAPI-Key": "593d66cda4mshc8044ca021e38bbp1a15f9jsn2b084577a41f"
+//        ]
+//
+//    let postData = NSMutableData(data: "q=\(text)".data(using: String.Encoding.utf8)!)
+//    postData.append("&target=\(to)".data(using: String.Encoding.utf8)!)
+//    postData.append("&source=\(from)".data(using: String.Encoding.utf8)!)
+//
+//    let request = NSMutableURLRequest(url: NSURL(string: "https://google-translate1.p.rapidapi.com/language/translate/v2")! as URL,
+//                                            cachePolicy: .useProtocolCachePolicy,
+//                                        timeoutInterval: 10.0)
+//    request.httpMethod = "POST"
+//    request.allHTTPHeaderFields = headers
+//    request.httpBody = postData as Data
+//
+//    let session = URLSession.shared
+//    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+//        if (error != nil) {
+//            print(error)
+//        } else {
+//            let httpResponse = response as? HTTPURLResponse
+//            if let data = data {
+//                do {
+//                    let decoder = JSONDecoder()
+//                    let decodedData = try decoder.decode(Translate.self, from: data)
+//                    self.myTranslatedText = decodedData.data.translations.first!.translatedText
+//                    DispatchQueue.main.async {
+//                        self.textViewBottom.text = decodedData.data.translations.first!.translatedText
+//                    }
+//
+//
+//
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//
+//        }
+//
+//    })
+//
+//    dataTask.resume()
+//
+//    }
+//
+//}
+
+extension HomePage: UITableViewDelegate, UITableViewDataSource {
+    func setupTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(TVC.self, forCellReuseIdentifier: "cell")
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return savedTexts.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TVC
+        let savedText = savedTexts[indexPath.row].components(separatedBy: "~")
+        let upLbl = savedText[0]
+        let downLbl = savedText[1]
+        print(upLbl, downLbl)
+        cell.updateCell(upLbl: upLbl, downLbl: downLbl)
+        return cell
+    }
+    
+    
+//    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+//
+//    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "delete") { _,_,_   in
+            self.savedTexts.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    }
+    
+  
+}
