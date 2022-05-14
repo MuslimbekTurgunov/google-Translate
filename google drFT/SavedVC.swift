@@ -32,7 +32,7 @@ class SavedVC: UIViewController {
             make.edges.equalTo(clearView).inset(50)
         }
         //lottieView.animation = .named("97484-clock-time")
-        lottieView.animation = .named("103989-done") 
+        lottieView.animation = .named("cooming soon") 
         lottieView.contentMode = .scaleAspectFit
         lottieView.loopMode = .loop
         lottieView.animationSpeed = 1

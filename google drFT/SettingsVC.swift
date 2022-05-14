@@ -6,24 +6,40 @@
 //
 
 import UIKit
+import Lottie
 
 class SettingsVC: UIViewController {
 
+    
+    let clearView = UIView()
+    let lottieView = AnimationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
     }
     
 
-    /*
-    // MARK: - Navigation
+    func setupUI(){
+  
+        self.view.addSubview(clearView)
+        clearView.backgroundColor = .systemBackground
+        clearView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.clearView.addSubview(lottieView)
+        lottieView.snp.makeConstraints { make in
+            make.edges.equalTo(clearView).inset(50)
+        }
+        //lottieView.animation = .named("97484-clock-time")
+        lottieView.animation = .named("98599-settings")
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .loop
+        lottieView.animationSpeed = 1
+        lottieView.play()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

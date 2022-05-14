@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import RealmSwift
+import Lottie
 
 class HomePage: UIViewController {
     var istextViewTopFilled: Bool = false
@@ -35,6 +36,9 @@ class HomePage: UIViewController {
     let speechAndTextBtn = UIButton()
     let tableView = UITableView()
     let saveBtn = UIButton()
+    
+    let clearView = UIView()
+    let lottieView = AnimationView()
     
     var realm: Realm!
     var savedTranlations: [SavedTranslations] = []
@@ -78,6 +82,7 @@ class HomePage: UIViewController {
     
     @objc func saveBtnPressed(){
         let data = SavedTranslations()
+        setupDoneLottieUI()
         data.text = "\(textViewTop.text)~\(textViewBottom.text)"
         savedTranlations.append(data)
         writeToDB(history: data)
@@ -104,10 +109,57 @@ class HomePage: UIViewController {
         }
     }
     
-
+    func setupDoneLottieUI(){
+        clearView.isHidden = false
+        self.view.addSubview(clearView)
+        clearView.backgroundColor = .clear
+        clearView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.clearView.addSubview(lottieView)
+        lottieView.snp.makeConstraints { make in
+            make.edges.equalTo(clearView).inset(50)
+        }
+        //lottieView.animation = .named("97484-clock-time")
+        lottieView.animation = .named("103989-done")
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .playOnce
+        lottieView.animationSpeed = 3
+        lottieView.play()
+        lottieView.play { _ in
+            self.clearView.isHidden = true
+        }
+    }
+    func setupDeleteLottieUI(){
+        clearView.isHidden = false
+        self.view.addSubview(clearView)
+        clearView.backgroundColor = .clear
+        clearView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        self.clearView.addSubview(lottieView)
+        lottieView.snp.makeConstraints { make in
+            make.edges.equalTo(clearView).inset(50)
+        }
+        //lottieView.animation = .named("97484-clock-time")
+        lottieView.animation = .named("87669-delete-animation")
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .playOnce
+        lottieView.animationSpeed = 2
+        lottieView.play()
+        lottieView.play { _ in
+            self.clearView.isHidden = true
+        }
+    }
+    
     func setupViews(){
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
+        
+       
+        
         
         self.view.addSubview(myView)
         myView.snp.makeConstraints { make in
@@ -534,6 +586,7 @@ extension HomePage {
     
     func removeFromDB(index: Int) {
         try! realm.write({
+            setupDeleteLottieUI()
             self.realm.delete(savedTranlations[index])
             self.savedTranlations.remove(at: index)
             self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
