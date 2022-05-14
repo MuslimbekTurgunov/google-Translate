@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import CloudKit
+import RealmSwift
 
 class HomePage: UIViewController {
     var istextViewTopFilled: Bool = false
@@ -36,11 +36,15 @@ class HomePage: UIViewController {
     let tableView = UITableView()
     let saveBtn = UIButton()
     
+    var realm: Realm!
+    var savedTranlations: [SavedTranslations] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         navigationItem.title = "Google Переводчик"
+        realm = try! Realm()
+        fetchFromDB()
         textViewDelegateSetup()
         setupTableView()
         setupViews()
@@ -73,8 +77,13 @@ class HomePage: UIViewController {
     }
     
     @objc func saveBtnPressed(){
-        savedTexts.append("\(textViewTop.text)~\(textViewBottom.text)")
-        tableView.reloadData()
+        let data = SavedTranslations()
+        data.text = "\(textViewTop.text)~\(textViewBottom.text)"
+        savedTranlations.append(data)
+        writeToDB(history: data)
+        //savedTexts.append("\(textViewTop.text)~\(textViewBottom.text)")
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        print(savedTranlations)
         }
     
     
@@ -350,8 +359,6 @@ extension HomePage: UITextViewDelegate {
         textViewBottom.text = textViewTop.text + "1!!"
         textViewBottom.contentOffset.y = textViewTop.contentOffset.y
         
-       
-        
         
     }
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -375,6 +382,14 @@ extension HomePage: UITextViewDelegate {
         
         
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+          if(text == "\n") {
+              textView.resignFirstResponder()
+              return false
+          }
+          return true
+      }
    
     
    
@@ -473,11 +488,12 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return savedTexts.count
+        return savedTranlations.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TVC
-        let savedText = savedTexts[indexPath.row].components(separatedBy: "~")
+        let data = savedTranlations[indexPath.row].text
+        let savedText = data!.components(separatedBy: "~")
         let upLbl = savedText[0]
         let downLbl = savedText[1]
         print(upLbl, downLbl)
@@ -492,7 +508,7 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "delete") { _,_,_   in
-            self.savedTexts.remove(at: indexPath.row)
+            self.removeFromDB(index: indexPath.row)
             tableView.reloadData()
         }
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
@@ -500,4 +516,27 @@ extension HomePage: UITableViewDelegate, UITableViewDataSource {
     }
     
   
+}
+
+
+//MARK: - Realm
+extension HomePage {
+    func writeToDB(history: SavedTranslations) {
+        try! realm.write({
+            self.realm.add(history)
+        })
+    }
+    
+    func fetchFromDB() {
+        savedTranlations = realm.objects(SavedTranslations.self).compactMap {$0}
+        self.tableView.reloadSections(IndexSet(integer: .zero), with: .automatic)
+    }
+    
+    func removeFromDB(index: Int) {
+        try! realm.write({
+            self.realm.delete(savedTranlations[index])
+            self.savedTranlations.remove(at: index)
+            self.tableView.reloadSections(IndexSet(integer: 0), with: .top)
+        })
+    }
 }
